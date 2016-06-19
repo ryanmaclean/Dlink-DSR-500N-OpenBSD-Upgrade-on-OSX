@@ -35,7 +35,7 @@ Attempting to allocate memory for ELF segment: addr: 0xffffffff81000000 (adjuste
 Build ZRouter
 =============
 
-``
+```
 brew install vagrant
 vagrant init kaorimatz/openbsd-5.9-amd64
 vagrant up --provider virtualbox
