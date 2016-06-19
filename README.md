@@ -31,3 +31,27 @@ Errors:
 ```
 Attempting to allocate memory for ELF segment: addr: 0xffffffff81000000 (adjusted to: 0x0000000001000000), size 0x504890
 ```
+
+Build ZRouter
+=============
+
+``
+brew install vagrant
+vagrant init kaorimatz/openbsd-5.9-amd64
+vagrant up --provider virtualbox
+vagrant ssh
+```
+
+On an OpenBSD box (or VM):
+
+```
+#!/bin/sh
+# What should work, but does not `exec !! lsz -X bsd.rd`
+
+pkg_add mercurial
+mkdir -p ZRouter/
+cd ZRouter
+hg clone http://zrouter.org/hg/zrouter/
+hg clone http://zrouter.org/hg/FreeBSD/head FreeBSD
+./menu.sh
+```
